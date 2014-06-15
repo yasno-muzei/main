@@ -5,10 +5,13 @@ var Cluster = require('project-cluster'),
 Config.init();
 Config.setBaseDir('./configs');
 
-var process = Cluster.create({
+var cluster = Cluster.create({
     config: {
         apps: {
-            web: -1
+            web: 1
+        },
+        timeout: {
+            kill: 1000
         }
     },
     start: function(callback) {
@@ -22,4 +25,5 @@ var process = Cluster.create({
         app.stop(callback);
     }
 });
-process.start();
+cluster.on('exit', process.exit);
+cluster.start();

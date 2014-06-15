@@ -4,7 +4,9 @@ var fs = require('fs'),
     path = require('path'),
     express = require('express'),
     async = require('async'),
-    LoggerFactory = require('project-logger');
+    LoggerFactory = require('project-logger'),
+
+    Service = require('./models/service');
 
 /**
  * App application
@@ -14,6 +16,9 @@ function App(config) {
     this.config = config;
     this.logger = LoggerFactory.get('web');
     this.logger.configure(this.config.log);
+
+    Service.config = this.config;
+    Service.logger = this.logger;
 
     this.initExpress();
 }
@@ -49,6 +54,8 @@ App.prototype.stop = function(callback) {
             }
         });
     }
+
+    steps.push(Service.end);
 
     async.series(steps, function(err) {
         return callback && callback(err);
