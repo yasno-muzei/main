@@ -9,26 +9,26 @@
 	<script src="scripts/less.js" type="text/javascript"></script>
 
 </head>
-<body ng-controller="mainCtrl">
+<body >
 	<header>
 		<img src="images/logo.png">
-		<div class="about">About</b>
+		<a class="about" href="#/about">About</a>
 	</header>
-	<section class="museums grid">
-		<div class="museum" ng-repeat="museum in museums" ng-click="showMuseum(museum.id)">
-			<img ng-src="{{museum.image}}"/>
-			<div class="title">{{museum.title}}</div>
-		</div>
+	<section class="museums grid" ng-view>
+		
 	</section>
-	<footer>
-		<i class="icon-search"></i>
+	<footer ng-controller="mainCtrl">
+		<i class="icon-search"></i>		
 		<nav class="categories" >
-			<a href="" ng-repeat="cetegory in cetegories">{{cetegory.name}}</a>
+			<a href="" ng-repeat="category in categories">{{category.name}}</a>
 		</nav>
 	</footer>
 	<script type="text/javascript" src="scripts/angular.js"></script>
 	<script type="text/javascript" src="scripts/angular-route.js"></script>
 	<script type="text/javascript" src="scripts/app.js"></script>
-	<script type="text/javascript" src="scripts/mainCtrl.js"></script>
+	<script type="text/javascript" src="controllers/mainCtrl.js"></script>
+	<script type="text/javascript" src="controllers/aboutCtrl.js"></script>
+	<script type="text/javascript" src="controllers/museumCtrl.js"></script>
+	<script type="text/javascript" src="controllers/categoryCtrl.js"></script>
 </body>
 </html>
