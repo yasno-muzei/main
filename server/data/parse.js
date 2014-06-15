@@ -11,13 +11,15 @@ async.each(Object.keys(museums), function(category, callback) {
         var parts = string.split(','),
             title = parts[0].trim(),
             wiki = parts[1].trim(),
-            fsqr = parts[2].trim();
+            fsqr = parts[2].trim(),
+            image = parts[3].trim();
 
         var museum = {
             title: title,
             category: category,
             wikilink: wiki,
-            foursquare: fsqr
+            foursquare: fsqr,
+            image: image
         };
 
         async.series([
