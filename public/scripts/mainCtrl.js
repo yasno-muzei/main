@@ -67,12 +67,8 @@ function mainCtrl($scope, $http) {
     {id: 3, title: 'Marble Palace', image: "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/AlexandreIIImonument.jpg/1024px-AlexandreIIImonument.jpg"},
     ];
     
-/*
-  $scope.cetegories = [
-  	{id: 1, name: "Fine art"},
-  	{id: 2, name: "Science and Natural History"},
-  	{id: 3, name: "Biographical"},
-  	{id: 4, name: "Local History"},
-  ]
-*/
+
+  $scope.showMuseum = function(id){
+  	console.log(id)
+  };
 }
