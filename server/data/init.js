@@ -49,6 +49,7 @@ function insertMuseums(callback) {
     async.each(museums, function(museum, callback) {
         mongo.collection('category').findOne({name: museum.category}, function(err, category) {
             if (err) return console.log(err);
+            museum.categoryName = museum.category;
             museum.category = category['_id'].toHexString();
             mongo.collection('museum').insert(museum, callback);
         });
