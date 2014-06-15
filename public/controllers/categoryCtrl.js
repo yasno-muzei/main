@@ -1,5 +1,14 @@
 function categoryCtrl($scope, $http) {
-console.log(1)
+	$http({method: 'GET', url: '/museum/list/539dbdb8dadc43440caf2832'}).
+    success(function(data, status, headers, config) {
+    	$scope.category = data;
+    	console.log(data)
+    }).
+   	error(function(data, status, headers, config) {
+    });
+
+
+
  $scope.museums = [
     {
     	id: 1,
