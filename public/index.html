@@ -12,7 +12,10 @@
 
 </head>
 <body ng-controller="mainCtrl">
-	<nav></nav>
+	<header>
+		<h1>Yasno.Muzei</h1>
+		<b></b>
+	</header>
 	<section class="museums grid">
 		<div class="museum" ng-repeat="museum in museums">
 			<img src="{{museum.image}}"/>
@@ -20,6 +23,7 @@
 		</div>
 	</section>
 	<footer>
+		<b class="search">&#9740;</b>
 		<nav class="categories" >
 			<a href="" ng-repeat="cetegory in cetegories">{{cetegory.name}}</a>
 		</nav>
