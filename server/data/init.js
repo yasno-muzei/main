@@ -27,10 +27,14 @@ Service.getMongo(function(err, db) {
 function clear(callback) {
     async.series([
         function(callback) {
-            mongo.collection('category').drop(callback);
+            mongo.collection('category').drop(function() {
+                callback();
+            });
         },
         function(callback) {
-            mongo.collection('museum').drop(callback);
+            mongo.collection('museum').drop(function() {
+                callback();
+            });
         }
     ], callback);
 }
@@ -45,7 +49,7 @@ function insertMuseums(callback) {
     async.each(museums, function(museum, callback) {
         mongo.collection('category').findOne({name: museum.category}, function(err, category) {
             if (err) return console.log(err);
-            museum.category = category['_id'];
+            museum.category = category['_id'].toHexString();
             mongo.collection('museum').insert(museum, callback);
         });
     }, callback);
