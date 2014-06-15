@@ -1,0 +1,20 @@
+{
+  "name": "yasno-muzei-web",
+  "version": "0.0.1",
+  "description": "Yasno.Muzei web-site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "async": "^0.7.0",
+    "body-parser": "^1.0.2",
+    "express": "^4.0.0",
+    "project-cluster": "git://github.com/lltwox/project-cluster.git#master",
+    "project-config": "^1.0.0",
+    "project-logger": "*"
+  }
+}
