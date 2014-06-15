@@ -1,9 +1,13 @@
-<h1>{{museum.name}}</h1>
+<h1>{{museum.title}}</h1>
 
-<div>
-	
+<div class="icons">
+	<i class="icon-tag"></i><span> {{museum.categoryName}}</span>
+	<i class="icon-location"></i> <span>{{museum.address}}</span>
+	<i class="icon-heart"></i><span> {{museum.rating}}	</span>
 </div>
+
 <img ng-src="{{museum.image}}"/>
+
 <p>
 {{museum.description}}
 </p>
