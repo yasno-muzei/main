@@ -13,15 +13,15 @@
 </head>
 <body ng-controller="mainCtrl">
 	<nav></nav>
-	<section class="museums grid" ng-repeat="museum in museums">
-		<div class="museum">
+	<section class="museums grid">
+		<div class="museum" ng-repeat="museum in museums">
 			<img src="{{museum.image}}"/>
 			<div class="title">{{museum.title}}</div>
 		</div>
 	</section>
 	<footer>
-		<nav class="categories" ng-repeat="cetegory in cetegories">
-			<a href="">{{cetegory.name}}</a>
+		<nav class="categories" >
+			<a href="" ng-repeat="cetegory in cetegories">{{cetegory.name}}</a>
 		</nav>
 	</footer>
 </body>
