@@ -1,6 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400&subset=latin,cyrillic-ext);
 html{
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', sans-serif;
 	body{
 		margin: 0;
 		padding: 0;
@@ -13,15 +15,19 @@ html{
 			h1{
 				margin: 20px;
 			}
+			.about{
+				margin: 20px;
+			}
 		}
 		section{
 			margin: 0 auto;
 			width: 700px;
 			display: block;
+			height: 80%;
 			.museum{
 				width: 200px;
 				height: 100px;
-				margin: 20px 15px;
+				margin: 20px 12px;
 				position: relative;
 				float: left;
 				img{
@@ -46,21 +52,29 @@ html{
 			bottom: 0;
 			background: 0;
 			width: 100%;
+			background: white;
+			height: 50px;
+			vertical-align: middle;
 			.search{
 				float: left;
 				-moz-transform: rotate(-180deg);
-	    -webkit-transform: rotate(-180deg);
-	    transform: rotate(-180deg);
-	    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2)
+	    		-webkit-transform: rotate(-180deg);
+	    		transform: rotate(-180deg);
+	    		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	    		font-size: 30px;
+	    		margin-top: 6px;
 			}
+			
 			nav{
-				height: 30px;
 				float: left;
+				vertical-align: middle;
 				a{
+					height: 50px;
 					display: block;
 					width: auto;
 					float: left;
-					margin: 0 20px;
+					margin: 15px;
+					text-decoration: none;
 				}
 			}
 		}
